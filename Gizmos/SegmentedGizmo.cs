@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Godot;
 namespace GizmosCSharp;
 /// <summary>
@@ -107,7 +106,7 @@ public partial class SegmentedGizmo : MeshInstance3D
             UpdateGizmo();
             return;
         }
-        if (segmentPoints.Last() == from)
+        if (segmentPoints[segmentPoints.Count - 1] == from)
         {
             segmentPoints.Add(to);
             UpdateGizmo();

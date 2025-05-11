@@ -7,7 +7,6 @@ namespace GizmosCSharp;
 public enum GSHAPES { CUSTOM, SQUARE, STOP, DIAMOND, ARROW, CUBE, TRIANGLE }
 public static class GizmoShapes
 {
-
     /// <summary>
     /// Uses the shape field to get the vec3 array that should be used
     /// </summary>
