@@ -14,7 +14,12 @@ public static class GizmoUtils
     {
         SegmentedGizmo gizmo = new SegmentedGizmo(); gizmo.pathScale = 1.0f;
         gizmo.color = col;
+        if(Engine.IsEditorHint()){
         EditorInterface.Singleton.GetEditedSceneRoot().AddChild(gizmo);
+        }else{
+            MainLoop ml = Engine.GetMainLoop();
+            (ml as SceneTree).Root.AddChild(gizmo);
+        }
         List<Vector3> path = new List<Vector3>() { start, end };
         gizmo.ClearSegments();
         gizmo.AddSegments(path);
