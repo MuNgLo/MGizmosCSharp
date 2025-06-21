@@ -16,3 +16,8 @@ When plugin is loaded you can also add line and shape nodes through the add chil
 
 Make use of the timing settings to save performance. Rebuilding the gizmos are expensive so if you have a lot of them, saving performance is important.
 
+
+![Demo](https://github.com/MuNgLo/MGizmosCSharp/blob/main/ExamplePictures/Shapes.png)
+![Demo](https://github.com/MuNgLo/MGizmosCSharp/blob/main/ExamplePictures/Line.png)
+![Demo](https://github.com/MuNgLo/MGizmosCSharp/blob/main/ExamplePictures/CircleAsTriangle.png)
+
