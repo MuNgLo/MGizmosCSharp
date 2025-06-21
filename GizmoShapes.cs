@@ -1,10 +1,11 @@
+using System;
 using Godot;
 
 namespace MGizmosCSharp;
 /// <summary>
 /// Static class that defines base shapes to use for the gizmos
 /// </summary>
-public enum GSHAPES { CUSTOM, SQUARE, STOP, DIAMOND, ARROW, CUBE, TRIANGLE }
+public enum GSHAPES { CUSTOM, SQUARE, STOP, DIAMOND, ARROW, CUBE, TRIANGLE, CIRCLE }
 public static class GizmoShapes
 {
     /// <summary>
@@ -27,9 +28,28 @@ public static class GizmoShapes
                 return Cube;
             case GSHAPES.TRIANGLE:
                 return Triangle;
+            case GSHAPES.CIRCLE:
+                return Circle();
         }
         return new Vector3[0];
     }
+
+    public static Vector3[] Circle(int subd = 12)
+    {
+        if (subd < 3) { subd = 3; }
+        Vector3[] arr = new Vector3[subd + 1];
+
+        float step = 2 * Mathf.Pi / subd;
+        for (int i = 0; i < subd; i++)
+        {
+            float x = 0.5f * Mathf.Cos(i * step);
+            float z = 0.5f * Mathf.Sin(i * step);
+            arr[i] = new Vector3(x, 0.0f, z);
+        }
+        arr[subd] = arr[0];
+        return arr;
+    }
+
     public static Vector3[] Triangle = new Vector3[]{
         new Vector3(0.0f,0.5f,0.0f),
         new Vector3(-0.5f,0.0f,0.0f),

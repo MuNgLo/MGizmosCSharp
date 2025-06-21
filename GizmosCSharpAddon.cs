@@ -7,7 +7,7 @@ public partial class GizmosCSharpAddon : EditorPlugin
 {
     public override void _EnterTree()
     {
-        GD.Print("Loaded GizmosCSharp Plugin : Gizmonodes can now be added through the add child node menu. For pure runtime code use the addon don't have to be loaded.");
+        GD.Print("Loaded MGizmosCSharp Plugin : Gizmo nodes can now be added through the add child node menu. For pure runtime code, the addon don't have to be loaded.");
     }
     public override void _ExitTree()
     {
@@ -20,7 +20,7 @@ public partial class GizmosCSharpAddon : EditorPlugin
     }
     public override string _GetPluginName()
     {
-        return "GizmosCSharp";
+        return "MGizmosCSharp";
     }
 }// EOF CLASS
 #endif

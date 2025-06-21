@@ -68,7 +68,15 @@ public static class GizmoUtils
         gizmo.AddSegments(GizmoShapes.GetShape(shape));
         gizmo.UpdateGizmo(duration);
     }
-
+    /// <summary>
+    /// Draws a shape with transform position and rotation for the duration and with the size of scale and given color
+    /// Shapes are defined in the static Class GizmoShapes
+    /// </summary>
+    /// <param name="transform"></param>
+    /// <param name="shape"></param>
+    /// <param name="duration"></param>
+    /// <param name="scale"></param>
+    /// <param name="col"></param>
     public static void DrawShape(Transform3D transform, GSHAPES shape, float duration, float scale, Color col)
     {
         SegmentedGizmo gizmo = new SegmentedGizmo(); gizmo.pathScale = 1.0f;
@@ -79,6 +87,24 @@ public static class GizmoUtils
         gizmo.Scale = Vector3.One * scale;
         gizmo.ClearSegments();
         gizmo.AddSegments(GizmoShapes.GetShape(shape));
+        gizmo.UpdateGizmo(duration);
+    }
+
+    public static void DrawCircle(Vector3 globalPosition, int subd, float duration, float scale, Color col)
+    {
+        Transform3D tr = new Transform3D(new Basis(), globalPosition);
+        DrawCircle(tr, subd, duration, scale, col);
+    }
+    public static void DrawCircle(Transform3D transform, int subd, float duration, float scale, Color col)
+    {
+        SegmentedGizmo gizmo = new SegmentedGizmo(); gizmo.pathScale = 1.0f;
+        gizmo.color = col;
+        MainLoop ml = Engine.GetMainLoop();
+        (ml as SceneTree).Root.AddChild(gizmo);
+        gizmo.Transform = transform;
+        gizmo.Scale = Vector3.One * scale;
+        gizmo.ClearSegments();
+        gizmo.AddSegments(GizmoShapes.Circle(subd));
         gizmo.UpdateGizmo(duration);
     }
 
