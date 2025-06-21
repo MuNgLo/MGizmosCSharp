@@ -7,7 +7,7 @@ public partial class GizmosCSharpAddon : EditorPlugin
 {
     public override void _EnterTree()
     {
-        GD.Print("Loaded GizmosCSharp Plugin");
+        GD.Print("Loaded GizmosCSharp Plugin : Current version has no added functionality as a loaded in addon. It is still usable in code.");
     }
     public override void _ExitTree()
     {
@@ -22,10 +22,5 @@ public partial class GizmosCSharpAddon : EditorPlugin
     {
         return "GizmosCSharp";
     }
-    /*public override Texture2D _GetPluginIcon()
-    {
-        Texture2D icon = ResourceLoader.Load("res://addons/MuNgLosDungeon/Icons/AddonIcon.png") as Texture2D;
-        return icon;
-    }*/
 }// EOF CLASS
 #endif
