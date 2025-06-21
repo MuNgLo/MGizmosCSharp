@@ -1,6 +1,6 @@
 using Godot;
 
-namespace GizmosCSharp;
+namespace MGizmosCSharp;
 /// <summary>
 /// Static class that defines base shapes to use for the gizmos
 /// </summary>
@@ -26,26 +26,19 @@ public static class GizmoShapes
             case GSHAPES.CUBE:
                 return Cube;
             case GSHAPES.TRIANGLE:
-                return TriArrow;
+                return Triangle;
         }
         return new Vector3[0];
     }
-    public static Vector3[] TriArrow = new Vector3[]{
-        new Vector3(0.0f,0.0f,0.0f),
-        new Vector3(-0.25f,0.0f,-0.25f),
-        new Vector3(0.25f,0.0f,-0.25f),
-
-        new Vector3(0.12f,0.0f,-0.25f),
-        new Vector3(-0.12f,0.0f,-0.25f),
-        new Vector3(0.12f,0.0f,-0.4f),
-
-        new Vector3(-0.12f,0.0f,-0.25f),
-        new Vector3(-0.12f,0.0f,-0.4f),
-        new Vector3(0.12f,0.0f,-0.4f)
+    public static Vector3[] Triangle = new Vector3[]{
+        new Vector3(0.0f,0.5f,0.0f),
+        new Vector3(-0.5f,0.0f,0.0f),
+        new Vector3(0.5f,0.0f,0.0f),
+        new Vector3(0.0f,0.5f,0.0f)
     };
     public static Vector3[] Arrow = new Vector3[]{
-        new Vector3(0.0f,1.0f,0.0f), new Vector3(0.0f,0.0f,0.0f), new Vector3(0.04f,0.04f,0.0f),
-        new Vector3(-0.04f,0.04f,0.0f), new Vector3(0.0f,0.0f,0.0f)
+        new Vector3(0.0f,1.0f,0.0f), new Vector3(0.0f,0.0f,0.0f), new Vector3(0.25f,0.25f,0.0f),
+        new Vector3(-0.25f,0.25f,0.0f), new Vector3(0.0f,0.0f,0.0f)
     };
     public static Vector3[] Square = new Vector3[]{
         new Vector3(-0.5f,0.0f,0.0f), new Vector3(0.0f,0.0f,0.5f), new Vector3(0.5f,0.0f,0.0f),
@@ -59,33 +52,33 @@ public static class GizmoShapes
         new Vector3(-0.5f,0.0f,0.0f)
     };
     public static Vector3[] Stop = new Vector3[]{
-        new Vector3(-0.5f,0.0f,-1.0f), new Vector3(0.5f,0.0f,-1.0f), new Vector3(1.0f,0.0f,-0.5f),
-        new Vector3(1.0f,0.0f,0.5f), new Vector3(0.5f,0.0f,1.0f), new Vector3(-0.5f,0.0f,1.0f),
-        new Vector3(-1.0f,0.0f,0.5f), new Vector3(-1.0f,0.0f,-0.5f), new Vector3(-0.5f,0.0f,-1.0f),
+        new Vector3(-0.25f,0.0f,-0.5f), new Vector3(0.25f,0.0f,-0.5f), new Vector3(0.5f,0.0f,-0.25f),
+        new Vector3(0.5f,0.0f,0.25f), new Vector3(0.25f,0.0f,0.5f), new Vector3(-0.25f,0.0f,0.5f),
+        new Vector3(-0.5f,0.0f,0.25f), new Vector3(-0.5f,0.0f,-0.25f), new Vector3(-0.25f,0.0f,-0.5f),
     };
     public static Vector3[] Cube = new Vector3[]{
 		// Bottom
-		new Vector3(-1.0f,-1.0f,1.0f),
-        new Vector3(1.0f,-1.0f,1.0f),
-        new Vector3(1.0f,-1.0f,-1.0f),
-        new Vector3(-1.0f,-1.0f,-1.0f),
-        new Vector3(-1.0f,-1.0f,1.0f),
+		new Vector3(-0.5f,-0.5f,0.5f),
+        new Vector3(0.5f,-0.5f,0.5f),
+        new Vector3(0.5f,-0.5f,-0.5f),
+        new Vector3(-0.5f,-0.5f,-0.5f),
+        new Vector3(-0.5f,-0.5f,0.5f),
 		// Top
-		new Vector3(-1.0f,1.0f,1.0f),
-        new Vector3(1.0f,1.0f,1.0f), // 6th
-		new Vector3(1.0f,1.0f,-1.0f),
-        new Vector3(-1.0f,1.0f,-1.0f),
-        new Vector3(-1.0f,1.0f,1.0f),
-        new Vector3(-1.0f,-1.0f,-1.0f), // 10th
-		new Vector3(-1.0f,1.0f,-1.0f),
-        new Vector3(1.0f,-1.0f,-1.0f),
-        new Vector3(1.0f,1.0f,-1.0f),
-        new Vector3(1.0f,-1.0f,1.0f),
-        new Vector3(1.0f,1.0f,1.0f), // 15th
-		new Vector3(-1.0f,-1.0f,1.0f)
+		new Vector3(-0.5f,0.5f,0.5f),
+        new Vector3(0.5f,0.5f,0.5f), // 6th
+		new Vector3(0.5f,0.5f,-0.5f),
+        new Vector3(-0.5f,0.5f,-0.5f),
+        new Vector3(-0.5f,0.5f,0.5f),
+        new Vector3(-0.5f,-0.5f,-0.5f), // 10th
+		new Vector3(-0.5f,0.5f,-0.5f),
+        new Vector3(0.5f,-0.5f,-0.5f),
+        new Vector3(0.5f,0.5f,-0.5f),
+        new Vector3(0.5f,-0.5f,0.5f),
+        new Vector3(0.5f,0.5f,0.5f), // 15th
+		new Vector3(-0.5f,-0.5f,0.5f)
     };
 
-    
+
 
 
 }// EOF CLASS

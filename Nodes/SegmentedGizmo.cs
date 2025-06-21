@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using Godot;
-namespace GizmosCSharp;
+namespace MGizmosCSharp;
 /// <summary>
 /// Uses an array of vector3 to draw line segments.
 /// Has predefined shapes, offset,scale and colour that can be changed
 /// Set shape custom and assign your own vector3 array for your own shapes.
 /// </summary>
-[GlobalClass, Tool]
+[Tool]
 public partial class SegmentedGizmo : MeshInstance3D
 {
     #region PRIVATE FIELDS

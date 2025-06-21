@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Godot;
 
-namespace GizmosCSharp;
+namespace MGizmosCSharp;
 /// <summary>
 /// Static utility Class for drawing Gizmos
 /// </summary>
@@ -47,7 +47,7 @@ public static class GizmoUtils
     {
         DrawShape(location, shape, duration, scale, Colors.Yellow);
     }
-      /// <summary>
+    /// <summary>
     /// Draws a shape at world location for the duration and with the size of scale and given color
     /// Shapes are defined in the static Class GizmoShapes
     /// </summary>
@@ -68,5 +68,19 @@ public static class GizmoUtils
         gizmo.AddSegments(GizmoShapes.GetShape(shape));
         gizmo.UpdateGizmo(duration);
     }
+
+    public static void DrawShape(Transform3D transform, GSHAPES shape, float duration, float scale, Color col)
+    {
+        SegmentedGizmo gizmo = new SegmentedGizmo(); gizmo.pathScale = 1.0f;
+        gizmo.color = col;
+        MainLoop ml = Engine.GetMainLoop();
+        (ml as SceneTree).Root.AddChild(gizmo);
+        gizmo.Transform = transform;
+        gizmo.Scale = Vector3.One * scale;
+        gizmo.ClearSegments();
+        gizmo.AddSegments(GizmoShapes.GetShape(shape));
+        gizmo.UpdateGizmo(duration);
+    }
+
 }// EOF CLASS
 
